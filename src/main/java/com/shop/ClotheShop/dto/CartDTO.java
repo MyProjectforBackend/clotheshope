@@ -10,13 +10,9 @@ import lombok.Getter;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class userDTO {
-    private String username;
-    private String firstName;
-    private String lastName;
-    private String gmail;
-    private String password;
-    private String role;
+public class CartDTO {
+    private int cartId;
+    private int userId;
 
     // add setter and getter for all fields
     // add constructor with all fields
