@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.shop.ClotheShop.domain.ProductVariant;
 
 public interface ProductVariantRepository extends JpaRepository<ProductVariant, Integer> {
-    List<ProductVariant> findByProductId(Integer productId);
+    List<ProductVariant> findByProduct_ProductId(Integer productId);
 
     List<ProductVariant> findByColor(String color);
 }

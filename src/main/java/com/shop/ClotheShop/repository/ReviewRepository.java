@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.shop.ClotheShop.domain.Review;
 
 public interface ReviewRepository extends JpaRepository<Review, Integer> {
-    List<Review> findByProductId(Integer productId);
+    List<Review> findByProduct_ProductId(Integer productId);
 
-    List<Review> findByIdUser(Integer idUser);
+    List<Review> findByUser_Id(Integer idUser);
 }

@@ -19,7 +19,7 @@ public class CartService {
     }
 
     public CartDTO getCartByUser(Integer userId) {
-        return cartRepository.findByIdUser(userId).map(this::toDTO).orElse(null);
+        return cartRepository.findByUser_Id(userId).map(this::toDTO).orElse(null);
     }
 
     public CartDTO createCart(CartDTO dto) {
@@ -30,13 +30,17 @@ public class CartService {
     private CartDTO toDTO(Cart cart) {
         CartDTO dto = new CartDTO();
         dto.setCartId(cart.getId());
-        dto.setUserId(cart.getIdUser());
+        dto.setUserId(cart.getUser() != null ? cart.getUser().getId() : 0);
         return dto;
     }
 
     private Cart toEntity(CartDTO dto) {
         Cart cart = new Cart();
-        cart.setIdUser(dto.getUserId());
+        if (dto.getUserId() != 0) {
+            com.shop.ClotheShop.domain.User user = new com.shop.ClotheShop.domain.User();
+            user.setId(dto.getUserId());
+            cart.setUser(user);
+        }
         return cart;
     }
 }

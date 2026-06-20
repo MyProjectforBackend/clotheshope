@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.shop.ClotheShop.dto.CartDTO;
+import com.shop.ClotheShop.domain.CartItem;
 
-public interface CartItemRepository extends JpaRepository<CartDTO, Integer> {
-    List<CartDTO> findByCart_Id(Integer cartId);
+public interface CartItemRepository extends JpaRepository<CartItem, Integer> {
+    List<CartItem> findByCart_Id(Integer cartId);
 }

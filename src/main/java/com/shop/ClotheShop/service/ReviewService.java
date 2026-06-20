@@ -19,12 +19,12 @@ public class ReviewService {
     }
 
     public List<ReviewDTO> getReviewsByProduct(Integer productId) {
-        return reviewRepository.findByProductId(productId)
+        return reviewRepository.findByProduct_ProductId(productId)
                 .stream().map(this::toDTO).collect(Collectors.toList());
     }
 
     public List<ReviewDTO> getReviewsByUser(Integer userId) {
-        return reviewRepository.findByIdUser(userId)
+        return reviewRepository.findByUser_Id(userId)
                 .stream().map(this::toDTO).collect(Collectors.toList());
     }
 
