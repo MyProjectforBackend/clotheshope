@@ -24,7 +24,7 @@ This project provides a REST API for managing products, users, carts, orders, an
 - Spring Boot
 - Spring Web
 - Spring Data JPA
-- MariaDB / H2 Database
+- MariaDB 
 - Maven
 - Swagger (OpenAPI)
 
