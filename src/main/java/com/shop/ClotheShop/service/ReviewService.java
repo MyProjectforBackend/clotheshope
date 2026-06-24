@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.shop.ClotheShop.domain.Review;
 import com.shop.ClotheShop.dto.ReviewDTO;
@@ -11,7 +12,12 @@ import com.shop.ClotheShop.repository.ReviewRepository;
 
 @Service
 public class ReviewService {
-    private ReviewRepository reviewRepository;
+    private final ReviewRepository reviewRepository;
+
+    @Autowired
+    public ReviewService(ReviewRepository reviewRepository) {
+        this.reviewRepository = reviewRepository;
+    }
 
     public List<ReviewDTO> getAllReviews() {
         return reviewRepository.findAll()

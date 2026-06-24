@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 import java.math.BigDecimal;
 
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.shop.ClotheShop.domain.Product;
 import com.shop.ClotheShop.dto.ProductDTO;
@@ -13,7 +14,12 @@ import com.shop.ClotheShop.repository.ProductRepository;
 @Service
 public class ProductService {
 
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
+
+    @Autowired
+    public ProductService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
     public List<ProductDTO> getAllProducts() {
         return productRepository.findAll()

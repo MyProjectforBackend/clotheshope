@@ -14,9 +14,18 @@ import org.springframework.web.bind.annotation.RestController;
 import com.shop.ClotheShop.dto.UserDTO;
 import com.shop.ClotheShop.service.UserService;
 
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+
+@ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Successfully handled review"),
+        @ApiResponse(responseCode = "400", description = "Invalid input data"),
+        @ApiResponse(responseCode = "401", description = "Unauthorized")
+})
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
+
     private UserService userService;
 
     public UserController(UserService userService) {

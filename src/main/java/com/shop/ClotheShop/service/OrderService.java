@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.shop.ClotheShop.domain.Order;
@@ -11,6 +12,7 @@ import com.shop.ClotheShop.dto.OrderDTO;
 import com.shop.ClotheShop.repository.OrderRepository;
 
 @Service
+
 public class OrderService {
     private final OrderRepository orderRepository;
 

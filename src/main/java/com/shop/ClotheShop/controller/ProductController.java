@@ -12,6 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.shop.ClotheShop.dto.ProductDTO;
 import com.shop.ClotheShop.service.ProductService;
 
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+
+@ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Successfully handled review"),
+        @ApiResponse(responseCode = "400", description = "Invalid input data"),
+        @ApiResponse(responseCode = "401", description = "Unauthorized")
+})
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {

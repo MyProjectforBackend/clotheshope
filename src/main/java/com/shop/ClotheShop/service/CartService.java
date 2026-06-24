@@ -13,6 +13,10 @@ import com.shop.ClotheShop.repository.CartRepository;
 public class CartService {
     private CartRepository cartRepository;
 
+    public CartService(CartRepository cartRepository) {
+        this.cartRepository = cartRepository;
+    }
+
     public List<CartDTO> getAllCarts() {
         return cartRepository.findAll()
                 .stream().map(this::toDTO).collect(Collectors.toList());
