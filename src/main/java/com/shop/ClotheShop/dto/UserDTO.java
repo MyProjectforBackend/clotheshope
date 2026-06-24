@@ -18,6 +18,7 @@ public class UserDTO {
     private String password;
     private String role;
     private String phone;
+    private Integer id;
 
     // add setter and getter for all fields
     // add constructor with all fields
